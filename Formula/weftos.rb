@@ -1,35 +1,39 @@
 class Weftos < Formula
   desc "WeftOS: A portable AI kernel with process management, mesh networking, and cognitive substrate"
   homepage "https://github.com/weave-logic-ai/weftos"
-  version "0.1.2"
+  version "0.1.4"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.1.2/weftos-aarch64-apple-darwin.tar.gz"
-      sha256 "63b5edeece76498f6de219fbf899fe2099ce7ea7831e0ef990eacdad6d58b7bf"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.1.4/weftos-aarch64-apple-darwin.tar.gz"
+      sha256 "064d25b7265df86c45f2b2697eee3bc0ac37248ab7e16df04b478d2ef64ee5f2"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.1.2/weftos-x86_64-apple-darwin.tar.gz"
-      sha256 "7508d923f5a98bba91116bfc60846ae9c20e39f798ac74d76f7cbf559d8ec7e9"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.1.4/weftos-x86_64-apple-darwin.tar.gz"
+      sha256 "f4e40281c5e7806f3222a48f6d20560b9a4a74590058fb04d9841f6f0d033279"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.1.2/weftos-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "e0985429325c43abacc4ea3024310ac7e55ef6ac5032c96dc839623b5ac870d0"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.1.4/weftos-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "ecb1400ee1ca7580136889205980a3da9bfe5a5e711e049474edbdb89d634b13"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.1.2/weftos-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "c33b15a19b27ebf47de15979ef38d72ea5d42e5d192fdc927cb30d9b77fec3dc"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.1.4/weftos-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "bc966fc63583e52fec1224c0daad719217a1571e86e94241a72317fba601495b"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin":      {},
-    "aarch64-unknown-linux-gnu": {},
-    "x86_64-apple-darwin":       {},
-    "x86_64-pc-windows-gnu":     {},
-    "x86_64-unknown-linux-gnu":  {},
+    "aarch64-apple-darwin":               {},
+    "aarch64-unknown-linux-gnu":          {},
+    "aarch64-unknown-linux-musl-dynamic": {},
+    "aarch64-unknown-linux-musl-static":  {},
+    "x86_64-apple-darwin":                {},
+    "x86_64-pc-windows-gnu":              {},
+    "x86_64-unknown-linux-gnu":           {},
+    "x86_64-unknown-linux-musl-dynamic":  {},
+    "x86_64-unknown-linux-musl-static":   {},
   }.freeze
 
   def target_triple
