@@ -1,35 +1,39 @@
 class ClawftCli < Formula
   desc "CLI binary (weft) for clawft"
   homepage "https://github.com/weave-logic-ai/weftos"
-  version "0.1.2"
+  version "0.1.4"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.1.2/clawft-cli-aarch64-apple-darwin.tar.gz"
-      sha256 "f13b04b5db9be4b4f7ba34115444ae09c2bf2c68a077c0bce69728afce11357d"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.1.4/clawft-cli-aarch64-apple-darwin.tar.gz"
+      sha256 "794b2f6d9ef847c05a7c1e98ceea23b500746bb139680b71b8063681e361e3ea"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.1.2/clawft-cli-x86_64-apple-darwin.tar.gz"
-      sha256 "bebd69d80b6b66bec44fe26d6e7a044f123ecad6aede2e93736e1cc4af95a8c7"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.1.4/clawft-cli-x86_64-apple-darwin.tar.gz"
+      sha256 "a36bc4830652d4a45f9e893a0a0dade3943438bc346833ebd6bded2063206db5"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.1.2/clawft-cli-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "0a8f0f6e345e4518828db3218ff0438bfc240fb67e075f1cc1ef401c85cfa02e"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.1.4/clawft-cli-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "1809fc596de251a0dede86de6fa15ac124dcfa2a753709df978b8680d549835e"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.1.2/clawft-cli-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "68ab7b3a01ad36805b66b582bf5909f2d4bb7a4af93e7f8a4be1fb5a68e879bf"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.1.4/clawft-cli-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "0eb9004005e3b4cd254a809ba976d9161f9e2c22cb85c7bf26c0095b5e8c673d"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin":      {},
-    "aarch64-unknown-linux-gnu": {},
-    "x86_64-apple-darwin":       {},
-    "x86_64-pc-windows-gnu":     {},
-    "x86_64-unknown-linux-gnu":  {},
+    "aarch64-apple-darwin":               {},
+    "aarch64-unknown-linux-gnu":          {},
+    "aarch64-unknown-linux-musl-dynamic": {},
+    "aarch64-unknown-linux-musl-static":  {},
+    "x86_64-apple-darwin":                {},
+    "x86_64-pc-windows-gnu":              {},
+    "x86_64-unknown-linux-gnu":           {},
+    "x86_64-unknown-linux-musl-dynamic":  {},
+    "x86_64-unknown-linux-musl-static":   {},
   }.freeze
 
   def target_triple
