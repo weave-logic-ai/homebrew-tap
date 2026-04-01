@@ -1,35 +1,39 @@
 class ClawftWeave < Formula
   desc "WeftOS operator CLI (weaver) — kernel management, services, and agent orchestration"
   homepage "https://github.com/weave-logic-ai/weftos"
-  version "0.1.2"
+  version "0.1.4"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.1.2/clawft-weave-aarch64-apple-darwin.tar.gz"
-      sha256 "dfa2a058921ba2925c8abdeb1b46cdc639cdc81a50182e3a1173a52cd183282d"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.1.4/clawft-weave-aarch64-apple-darwin.tar.gz"
+      sha256 "8829a0f386e3e96cb63486e916db8c26146b9ef037f0039546ac2442c11ec66c"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.1.2/clawft-weave-x86_64-apple-darwin.tar.gz"
-      sha256 "bb5d2f420b1d4dbcae9d801d864baedc1a42c0f9707d644b3c59ec452295a53b"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.1.4/clawft-weave-x86_64-apple-darwin.tar.gz"
+      sha256 "233da4e9ba73f6e0b08aed71363509dd33214465c64a97d88545867a2b644569"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.1.2/clawft-weave-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "980e29a0c1d8d7d4abb871720eb7fe4cca26e32d453b749002206935b7891d6b"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.1.4/clawft-weave-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "ef5550947b09e27667049b27401148ee10b7635f1d1fb0845a3419a6f0aec332"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.1.2/clawft-weave-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "aceb2a275bea63a03ce58f9c2975e984a5d71785647739b2917ec9dbc2e132f4"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.1.4/clawft-weave-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "f46c1015d614a95e5fa24cb74564078438696ec6114d1d4418b0c6ab63eae1dc"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin":      {},
-    "aarch64-unknown-linux-gnu": {},
-    "x86_64-apple-darwin":       {},
-    "x86_64-pc-windows-gnu":     {},
-    "x86_64-unknown-linux-gnu":  {},
+    "aarch64-apple-darwin":               {},
+    "aarch64-unknown-linux-gnu":          {},
+    "aarch64-unknown-linux-musl-dynamic": {},
+    "aarch64-unknown-linux-musl-static":  {},
+    "x86_64-apple-darwin":                {},
+    "x86_64-pc-windows-gnu":              {},
+    "x86_64-unknown-linux-gnu":           {},
+    "x86_64-unknown-linux-musl-dynamic":  {},
+    "x86_64-unknown-linux-musl-static":   {},
   }.freeze
 
   def target_triple
