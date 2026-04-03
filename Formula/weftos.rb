@@ -1,25 +1,25 @@
 class Weftos < Formula
   desc "WeftOS: A portable AI kernel with process management, mesh networking, and cognitive substrate"
   homepage "https://github.com/weave-logic-ai/weftos"
-  version "0.3.1"
+  version "0.4.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.3.1/weftos-aarch64-apple-darwin.tar.gz"
-      sha256 "8eb632a80717595b5255eb3e2ab772e481e775d95c9b60c5b57bb8c2feea4285"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.4.0/weftos-aarch64-apple-darwin.tar.gz"
+      sha256 "6d02d8118af0b9ec85ee6e82b96a1cba2ee9ee949b9bd0e6039558332a7d0ac5"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.3.1/weftos-x86_64-apple-darwin.tar.gz"
-      sha256 "b3a2770789436f03cc14d034ed26e9cc69ab4eeeacb50c3ac9fd1dc609366164"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.4.0/weftos-x86_64-apple-darwin.tar.gz"
+      sha256 "1246d801a1f2a216d5678a7476378ba3c586ce6803569d709e714d557586d189"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.3.1/weftos-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "35bd8cc3e1005906f65d82b6fac9341809c0b178d4eeeede535c39f33ae482b5"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.4.0/weftos-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "4f0de9c0f218b9887fd150aafc13a92732a835aff01af051e2d82a2adbcba75a"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.3.1/weftos-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "45e42d2b428a7435ca5f3de4524494668b27f4d8b9fe039192907584355caeed"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.4.0/weftos-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "802cff7dbaf4f5b36ddde3a9bbfd8df88c6bb5ebcc32372322d82d6c8dd49a71"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
