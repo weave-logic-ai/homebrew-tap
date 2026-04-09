@@ -5,21 +5,21 @@ class Weftos < Formula
   if OS.mac?
     if Hardware::CPU.arm?
       url "https://github.com/weave-logic-ai/weftos/releases/download/v0.5.4/weftos-aarch64-apple-darwin.tar.gz"
-      sha256 "42067de470c54094099e2b91e1ceb7400a4aecbd1784996ab17e90b9b84ab35b"
+      sha256 "e5c4e1eff6135e4e7762bdae7970c2afddbdd0d374d2c6260410beea936e6b3a"
     end
     if Hardware::CPU.intel?
       url "https://github.com/weave-logic-ai/weftos/releases/download/v0.5.4/weftos-x86_64-apple-darwin.tar.gz"
-      sha256 "acac7de6b21365c0bc6171a39d67694a9b9006a05bcff1f473cc17a59cfd2777"
+      sha256 "90690bb8c4f0a54d45b192e6e829218022a3904e7bba091e40de86074b2ec6dd"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
       url "https://github.com/weave-logic-ai/weftos/releases/download/v0.5.4/weftos-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "fe2b978751a851175c39a9991a4927ed8c4c2eec93d2fcdc8158c3d543e35ec8"
+      sha256 "4c5d613fa0d9cd227c23a15459684fafac5076d4a5c3b466cdedc9529bf03db7"
     end
     if Hardware::CPU.intel?
       url "https://github.com/weave-logic-ai/weftos/releases/download/v0.5.4/weftos-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "43c1f830ab85219ff90b68b435cfbb95de5a51c35a3d0ac6e463061e790bee64"
+      sha256 "1adea4f446a809c8bd9849d6d7ce02ac509defe83f88cc72e45e205714193f98"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
