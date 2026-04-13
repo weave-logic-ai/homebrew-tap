@@ -1,25 +1,25 @@
 class ClawftWeave < Formula
   desc "WeftOS operator CLI (weaver) — kernel management, services, and agent orchestration"
   homepage "https://github.com/weave-logic-ai/weftos"
-  version "0.6.1"
+  version "0.6.2"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.6.1/clawft-weave-aarch64-apple-darwin.tar.gz"
-      sha256 "a1eaf6b0f403e8565e1094d7b8dae57a4d2fd9f905068806134d49654c2d89c3"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.6.2/clawft-weave-aarch64-apple-darwin.tar.gz"
+      sha256 "e453185867487e16ce5b625ed88a288b14e1a62a20487e6f5fa01e93026de0a3"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.6.1/clawft-weave-x86_64-apple-darwin.tar.gz"
-      sha256 "9a9575db31d48ce0dd7944b0ab8c2a29fbffcea22543a5b2e78bcdc3df401d48"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.6.2/clawft-weave-x86_64-apple-darwin.tar.gz"
+      sha256 "62b3f93beb81b8c5b1729c64b4c8b3d6bbf9faa659e83e6b4e771c9695b06711"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.6.1/clawft-weave-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "0ab4e8cab6f5eb92e70c7128e8d10c3608307fc47f0f97b83c8344e94ea5cd88"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.6.2/clawft-weave-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "1787d7b81b95e4e309667f66265fa5115374eee273a47ba95c7d9735aa84025c"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.6.1/clawft-weave-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "c6a64bf055f3fac46c20e8e79a8b2a0d5e241a3ff0d39618737e601fea462444"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.6.2/clawft-weave-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "d0c8aed47352d7f98d7641723fe5d06079dfe0987d0608cb9e0f62c46464fbad"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
