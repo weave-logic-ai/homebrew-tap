@@ -1,25 +1,25 @@
 class Weftos < Formula
   desc "WeftOS: A portable AI kernel with process management, mesh networking, and cognitive substrate"
   homepage "https://github.com/weave-logic-ai/weftos"
-  version "0.6.9"
+  version "0.6.10"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.6.9/weftos-aarch64-apple-darwin.tar.gz"
-      sha256 "b46b797f96d2644849b70306918753c41f3a3e16f257391bfda4475add37f3f0"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.6.10/weftos-aarch64-apple-darwin.tar.gz"
+      sha256 "7f3edcd0a4078efa024f62180b8038c09d2f08b08b993577d0273eccaf5ab26c"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.6.9/weftos-x86_64-apple-darwin.tar.gz"
-      sha256 "fcedadd734055d08a0572bf537313c6dd3ed2b18f154be34fd540a0b6be4060d"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.6.10/weftos-x86_64-apple-darwin.tar.gz"
+      sha256 "77a177e0038cd6f89d6f7b460e00967bed473a0e5df8c4b759aecb7186f1da66"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.6.9/weftos-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "5ebd84a15b41c806e801923b4aed070f51f12523d0439722ae97e926ac30dfcc"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.6.10/weftos-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "4e6e43b12c9190be2f326ca7f29e5fc3fcbf25d3406b6ebe7f0889ab92178e74"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.6.9/weftos-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "95b148c87d56542c64488ad9481fb7302b6cba5b55ef81efa099063ca61e8c40"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.6.10/weftos-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "8f577b554f2b5a53a1756f27ff2b5e327a716b6898088843995845559f58f2ae"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
