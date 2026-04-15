@@ -1,25 +1,25 @@
 class ClawftCli < Formula
   desc "CLI binary (weft) for clawft"
   homepage "https://github.com/weave-logic-ai/weftos"
-  version "0.6.9"
+  version "0.6.10"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.6.9/clawft-cli-aarch64-apple-darwin.tar.gz"
-      sha256 "63c64325e61fcedb7db03b1b64e83309a2a0d59ff170cda512e0676c6a683e10"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.6.10/clawft-cli-aarch64-apple-darwin.tar.gz"
+      sha256 "28b43de2bb707cb814edfb583469bbb3f697b4cc9493490ccab80d9ffe810d54"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.6.9/clawft-cli-x86_64-apple-darwin.tar.gz"
-      sha256 "18715d6a24e0769714a6afc9dbb51f3cdb4035ffdbcdc53d028179964ca788f7"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.6.10/clawft-cli-x86_64-apple-darwin.tar.gz"
+      sha256 "144894914b7b36c1398dbb414eae934b9ab0e91690a076343f65d6f28d4b2d38"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.6.9/clawft-cli-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "c939fcb048e21de0ba5f9dc0ec21ed77665333484d8fcba228fb1512fe036d86"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.6.10/clawft-cli-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "9c0bf4ede13ea6370deebc9118d37bda2fec0e1c29f39d1f1fac6aea13fb920d"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.6.9/clawft-cli-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "ea04c2b14e7d352dd680255d51b2546b0f8d6b5014e6ff47921e1713cc6e2242"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.6.10/clawft-cli-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "698329e56e0f1689e8f0df007e4ea33193712cf23c354f775661918cc1c34302"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
