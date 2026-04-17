@@ -1,25 +1,25 @@
 class Weftos < Formula
   desc "WeftOS: A portable AI kernel with process management, mesh networking, and cognitive substrate"
   homepage "https://github.com/weave-logic-ai/weftos"
-  version "0.6.14"
+  version "0.6.15"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.6.14/weftos-aarch64-apple-darwin.tar.gz"
-      sha256 "975aba12ee343cc7111e9e7bbfaed1a98206d6b94c93e566a72ad588a4e74e57"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.6.15/weftos-aarch64-apple-darwin.tar.gz"
+      sha256 "00ca2cd4c0df109504c3fa0412031ab8536eef22df5ba98b465ff7ccd7a0aa34"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.6.14/weftos-x86_64-apple-darwin.tar.gz"
-      sha256 "0381b1722cf44a0fbcd9c9a3f70f70fa7dd4d3f3c7fb7bd16b95564fc2640c56"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.6.15/weftos-x86_64-apple-darwin.tar.gz"
+      sha256 "6fbaf841c6f51e1ad264af5ceea808845d14d5a933e5d28b8c12d51e6d756b20"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.6.14/weftos-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "84ef5e589fa0fb121282bbf5cf8bae4aba036b5d5148f8db7a5695b792945ad7"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.6.15/weftos-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "1604eaa3a30eb4ff163cf23a2fad94ed6bdd5a1be2fc7fffc33d20eaa68b5353"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.6.14/weftos-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "ea83a124415d6902b7f2bfb8cd2cfe8c12a7770c9857e0279840d93ba6cf2cda"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.6.15/weftos-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "1572f89cff43d11ff409c7650d664858a90ef27575dcf77416a80c0a859edda1"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
