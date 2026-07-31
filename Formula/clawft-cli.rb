@@ -1,25 +1,25 @@
 class ClawftCli < Formula
   desc "CLI binary (weft) for clawft"
   homepage "https://github.com/weave-logic-ai/weftos"
-  version "0.6.20"
+  version "0.8.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.6.20/clawft-cli-aarch64-apple-darwin.tar.gz"
-      sha256 "c6b7e8e936a69b1e701fa5d75897613c49a22d566495908cc76f1f6513c52f93"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.0/clawft-cli-aarch64-apple-darwin.tar.gz"
+      sha256 "58ecb7ba3e08be0967e0b00ec3c2b2f603cbb5b3981c85f42ce07cbfdb1bc2d4"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.6.20/clawft-cli-x86_64-apple-darwin.tar.gz"
-      sha256 "a9f0797e45e604cb64806fd57f87fd8ea50ff59afae84b43bdada8b19f778bc0"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.0/clawft-cli-x86_64-apple-darwin.tar.gz"
+      sha256 "36313b21745d36762608c7a792e6faa46eed1df850ca9b73255cb6973cbc3239"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.6.20/clawft-cli-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "3208d4fd09d07ac9a8eaa7c08097335567cd98d1238d07b5aec9b7038bfe584e"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.0/clawft-cli-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "db2dd66f301788f0049ba7c99e9e33ed3ff5af6938cfeb677470c16854d33339"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.6.20/clawft-cli-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "5af0d7f92d0791ccd3bd8ad5553d6dc80848e9e7bb25adaf2f937f5778e3889c"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.0/clawft-cli-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "7c1b62256ebfa4259434a11e3e8a27795dad4585d1a7adbce07dcd0c3dc17664"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
@@ -30,6 +30,7 @@ class ClawftCli < Formula
     "aarch64-unknown-linux-musl-dynamic": {},
     "aarch64-unknown-linux-musl-static":  {},
     "x86_64-apple-darwin":                {},
+    "x86_64-pc-windows-gnu":              {},
     "x86_64-unknown-linux-gnu":           {},
     "x86_64-unknown-linux-musl-dynamic":  {},
     "x86_64-unknown-linux-musl-static":   {},
