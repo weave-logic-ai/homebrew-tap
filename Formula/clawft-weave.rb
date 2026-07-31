@@ -1,25 +1,25 @@
 class ClawftWeave < Formula
   desc "WeftOS operator CLI (weaver) — kernel management, services, and agent orchestration"
   homepage "https://github.com/weave-logic-ai/weftos"
-  version "0.6.20"
+  version "0.8.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.6.20/clawft-weave-aarch64-apple-darwin.tar.gz"
-      sha256 "d2878b76d01c21e7d26934f5613cc9a0190f3e3ce220ee49be0e377c1714e0a8"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.0/clawft-weave-aarch64-apple-darwin.tar.gz"
+      sha256 "f49b73091f6e3be94bb11fad79853c899ae2e64acff6e893d6b71d9872993ce4"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.6.20/clawft-weave-x86_64-apple-darwin.tar.gz"
-      sha256 "1dcf54dbff84b9abcde8b5dd2b58450a416ae796f7af1af5cbbd6f6f30bae2ba"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.0/clawft-weave-x86_64-apple-darwin.tar.gz"
+      sha256 "cedfda9718d2443de0ca5ec08c7f1d464f74a3b781abc48a94bd7970b4c60d30"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.6.20/clawft-weave-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "6dd79b19d53a9962272a2ca7b919cc6f492248480c1afcfc35956b2320636a3b"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.0/clawft-weave-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "8030bbb3e057da705737e3deaed5d0db407528e6f233c41ccd92e49c42fde846"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.6.20/clawft-weave-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "8f15ca1ca0ac5c6711ade6f3e1f74886907d06e2887bf41b3b10e8dcd9727940"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.0/clawft-weave-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "bd24cf67c0bb66592b6a84ed2c8bb52aae3882c076f6c1a873c311ff39b4fb28"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
@@ -30,6 +30,7 @@ class ClawftWeave < Formula
     "aarch64-unknown-linux-musl-dynamic": {},
     "aarch64-unknown-linux-musl-static":  {},
     "x86_64-apple-darwin":                {},
+    "x86_64-pc-windows-gnu":              {},
     "x86_64-unknown-linux-gnu":           {},
     "x86_64-unknown-linux-musl-dynamic":  {},
     "x86_64-unknown-linux-musl-static":   {},
