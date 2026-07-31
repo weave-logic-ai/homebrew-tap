@@ -1,25 +1,25 @@
 class ClawftGuiEgui < Formula
   desc "egui/eframe native GUI spike for ClawFT — ports the 12 core UI blocks"
   homepage "https://github.com/weave-logic-ai/weftos"
-  version "0.6.20"
+  version "0.8.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.6.20/clawft-gui-egui-aarch64-apple-darwin.tar.gz"
-      sha256 "c8777287c29bfbb7af1fab4eae67aa2c5a3faf27e1be4259347e96b4ccad4d58"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.0/clawft-gui-egui-aarch64-apple-darwin.tar.gz"
+      sha256 "0895a941625b77151214c2748280199b9a2856b4b84b673b359f7708da366bf9"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.6.20/clawft-gui-egui-x86_64-apple-darwin.tar.gz"
-      sha256 "c23570068de76549b459011d9cf5020565f2c385c8ebd6e4e435568761823dc8"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.0/clawft-gui-egui-x86_64-apple-darwin.tar.gz"
+      sha256 "3bd48d249c6ab6669fa7a5df0ab82f4836a14f766560376629bbf433102238bc"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.6.20/clawft-gui-egui-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "f0a7f9d38f3697988d9b9c2e89f5a63188ab20d782a7760c8245470e0ee5575f"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.0/clawft-gui-egui-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "5f75a268a3046a8a7b20d693db8c38b301cdc5d17be6b00bfe51e3882bf225de"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.6.20/clawft-gui-egui-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "5d6a18ee7eef15413f2c0909a387ff72a4f30d10ac281bf299aab87f6c5e0774"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.0/clawft-gui-egui-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "14cd2baca2f20355421d32ea47b4c55a1b913ae532822294e85d666609c1d6dd"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
@@ -30,6 +30,7 @@ class ClawftGuiEgui < Formula
     "aarch64-unknown-linux-musl-dynamic": {},
     "aarch64-unknown-linux-musl-static":  {},
     "x86_64-apple-darwin":                {},
+    "x86_64-pc-windows-gnu":              {},
     "x86_64-unknown-linux-gnu":           {},
     "x86_64-unknown-linux-musl-dynamic":  {},
     "x86_64-unknown-linux-musl-static":   {},
@@ -51,10 +52,10 @@ class ClawftGuiEgui < Formula
   end
 
   def install
-    bin.install "weft-demo-lab", "weft-gui-egui" if OS.mac? && Hardware::CPU.arm?
-    bin.install "weft-demo-lab", "weft-gui-egui" if OS.mac? && Hardware::CPU.intel?
-    bin.install "weft-demo-lab", "weft-gui-egui" if OS.linux? && Hardware::CPU.arm?
-    bin.install "weft-demo-lab", "weft-gui-egui" if OS.linux? && Hardware::CPU.intel?
+    bin.install "weft-gui-egui" if OS.mac? && Hardware::CPU.arm?
+    bin.install "weft-gui-egui" if OS.mac? && Hardware::CPU.intel?
+    bin.install "weft-gui-egui" if OS.linux? && Hardware::CPU.arm?
+    bin.install "weft-gui-egui" if OS.linux? && Hardware::CPU.intel?
 
     install_binary_aliases!
 
