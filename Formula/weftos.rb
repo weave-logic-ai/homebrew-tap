@@ -1,25 +1,25 @@
 class Weftos < Formula
   desc "WeftOS: A portable AI kernel with process management, mesh networking, and cognitive substrate"
   homepage "https://github.com/weave-logic-ai/weftos"
-  version "0.6.20"
+  version "0.8.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.6.20/weftos-aarch64-apple-darwin.tar.gz"
-      sha256 "727f542656835151c61a6b1d7847be24c36d63acfa655cf5bf4ba24f3918c6bb"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.0/weftos-aarch64-apple-darwin.tar.gz"
+      sha256 "a089f0259c85ca45eaae89636c6137c7e609b47e53d571b5c877b1e564e52c8b"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.6.20/weftos-x86_64-apple-darwin.tar.gz"
-      sha256 "bca50cbcab3dbff97e83d067206103217e88e0396f9bd0ef66a9cafccb8c30ca"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.0/weftos-x86_64-apple-darwin.tar.gz"
+      sha256 "e78b0df66b9e3a6dba68916cbbad61c393810074e3060278d37c0d297d73907c"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.6.20/weftos-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "cb2046db0a79093e2d2d054f23c4749208be05d0965d47952209eb93b74ab95a"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.0/weftos-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "707fc7a2982805612a8f466975f27ea2d297708ac0e983295504d044cc292882"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.6.20/weftos-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "b8910deeb24d0f012047a9453b9ec9296f455c5ccdb4d55d5d0cccf17c7d429a"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.0/weftos-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "e0bf01fe95c75af5460a2ef21de3db763aa3ac5a33110983ef2902b7903a6053"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
@@ -30,6 +30,7 @@ class Weftos < Formula
     "aarch64-unknown-linux-musl-dynamic": {},
     "aarch64-unknown-linux-musl-static":  {},
     "x86_64-apple-darwin":                {},
+    "x86_64-pc-windows-gnu":              {},
     "x86_64-unknown-linux-gnu":           {},
     "x86_64-unknown-linux-musl-dynamic":  {},
     "x86_64-unknown-linux-musl-static":   {},
