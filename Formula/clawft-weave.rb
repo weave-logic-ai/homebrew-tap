@@ -1,25 +1,25 @@
 class ClawftWeave < Formula
   desc "WeftOS operator CLI (weaver) — kernel management, services, and agent orchestration"
   homepage "https://github.com/weave-logic-ai/weftos"
-  version "0.8.0"
+  version "0.8.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.0/clawft-weave-aarch64-apple-darwin.tar.gz"
-      sha256 "f49b73091f6e3be94bb11fad79853c899ae2e64acff6e893d6b71d9872993ce4"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.1/clawft-weave-aarch64-apple-darwin.tar.gz"
+      sha256 "4697da7a91d40fb131928473ed8f402792500b8446d442d4c8a60784f257d66a"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.0/clawft-weave-x86_64-apple-darwin.tar.gz"
-      sha256 "cedfda9718d2443de0ca5ec08c7f1d464f74a3b781abc48a94bd7970b4c60d30"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.1/clawft-weave-x86_64-apple-darwin.tar.gz"
+      sha256 "0fde279d95e33979be3f7a2720785ee76850027dd6fa18162c0e6463b496f8a9"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.0/clawft-weave-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "8030bbb3e057da705737e3deaed5d0db407528e6f233c41ccd92e49c42fde846"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.1/clawft-weave-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "903ecddd9a5fbd6d494c68a883b9fd6ac614d39893ad0cc58be22c3958917f7b"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.0/clawft-weave-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "bd24cf67c0bb66592b6a84ed2c8bb52aae3882c076f6c1a873c311ff39b4fb28"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.1/clawft-weave-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "ef2c95dd756c411c6213928f0e7481f0613eb99af6749cfeece1b5025cb2e27b"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
@@ -52,10 +52,18 @@ class ClawftWeave < Formula
   end
 
   def install
-    bin.install "weaver" if OS.mac? && Hardware::CPU.arm?
-    bin.install "weaver" if OS.mac? && Hardware::CPU.intel?
-    bin.install "weaver" if OS.linux? && Hardware::CPU.arm?
-    bin.install "weaver" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "weaver"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "weaver"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "weaver"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "weaver"
+    end
 
     install_binary_aliases!
 
