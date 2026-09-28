@@ -1,25 +1,25 @@
 class Weftos < Formula
   desc "WeftOS: A portable AI kernel with process management, mesh networking, and cognitive substrate"
   homepage "https://github.com/weave-logic-ai/weftos"
-  version "0.8.0"
+  version "0.8.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.0/weftos-aarch64-apple-darwin.tar.gz"
-      sha256 "a089f0259c85ca45eaae89636c6137c7e609b47e53d571b5c877b1e564e52c8b"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.1/weftos-aarch64-apple-darwin.tar.gz"
+      sha256 "53fb5ef9dabd4106045d6f88ba298ac5c0c9f9d07ba3c5487e71ef12fd015ac0"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.0/weftos-x86_64-apple-darwin.tar.gz"
-      sha256 "e78b0df66b9e3a6dba68916cbbad61c393810074e3060278d37c0d297d73907c"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.1/weftos-x86_64-apple-darwin.tar.gz"
+      sha256 "c7dbca9b724f65c668772612b9d4b9a8021ce2a0db92405ab756771d1c9a5be2"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.0/weftos-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "707fc7a2982805612a8f466975f27ea2d297708ac0e983295504d044cc292882"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.1/weftos-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "c9bb09f37faf639dfb7bf162be4cafee435c203d7428a2476bd9280997d1b9ec"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.0/weftos-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "e0bf01fe95c75af5460a2ef21de3db763aa3ac5a33110983ef2902b7903a6053"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.1/weftos-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "524742e2105121484b5f671b60c8bac56a2cf212898a33978ca96ccc47994930"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
@@ -52,10 +52,18 @@ class Weftos < Formula
   end
 
   def install
-    bin.install "weftos" if OS.mac? && Hardware::CPU.arm?
-    bin.install "weftos" if OS.mac? && Hardware::CPU.intel?
-    bin.install "weftos" if OS.linux? && Hardware::CPU.arm?
-    bin.install "weftos" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "weftos"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "weftos"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "weftos"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "weftos"
+    end
 
     install_binary_aliases!
 
