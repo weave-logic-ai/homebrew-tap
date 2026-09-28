@@ -1,25 +1,25 @@
 class ClawftCli < Formula
   desc "CLI binary (weft) for clawft"
   homepage "https://github.com/weave-logic-ai/weftos"
-  version "0.8.0"
+  version "0.8.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.0/clawft-cli-aarch64-apple-darwin.tar.gz"
-      sha256 "58ecb7ba3e08be0967e0b00ec3c2b2f603cbb5b3981c85f42ce07cbfdb1bc2d4"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.1/clawft-cli-aarch64-apple-darwin.tar.gz"
+      sha256 "ee33cd687054a5abdd01ac93454b5dfccaec96b5bd3430bf175778378927749b"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.0/clawft-cli-x86_64-apple-darwin.tar.gz"
-      sha256 "36313b21745d36762608c7a792e6faa46eed1df850ca9b73255cb6973cbc3239"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.1/clawft-cli-x86_64-apple-darwin.tar.gz"
+      sha256 "dae8fa2e1177bf256e7bd685af5873b342c47e0b2c0897ac09198165cd16d78d"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.0/clawft-cli-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "db2dd66f301788f0049ba7c99e9e33ed3ff5af6938cfeb677470c16854d33339"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.1/clawft-cli-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "9aac011a4ef892201328f044813ef56f550681edfd79cf3ada2931c890ab8eff"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.0/clawft-cli-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "7c1b62256ebfa4259434a11e3e8a27795dad4585d1a7adbce07dcd0c3dc17664"
+      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.1/clawft-cli-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "29b0de7cf923b87d0fa50003fcc00c1a00b3b0ff4b82994f4eb556faf88674ee"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
@@ -52,10 +52,18 @@ class ClawftCli < Formula
   end
 
   def install
-    bin.install "weft" if OS.mac? && Hardware::CPU.arm?
-    bin.install "weft" if OS.mac? && Hardware::CPU.intel?
-    bin.install "weft" if OS.linux? && Hardware::CPU.arm?
-    bin.install "weft" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "weft"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "weft"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "weft"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "weft"
+    end
 
     install_binary_aliases!
 
