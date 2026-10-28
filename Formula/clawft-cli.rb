@@ -1,40 +1,40 @@
 class ClawftCli < Formula
   desc "CLI binary (weft) for clawft"
-  homepage "https://github.com/weave-logic-ai/weftos"
-  version "0.8.3"
+  homepage "https://github.com/WeftOS/weftos"
+  version "0.8.4"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.3/clawft-cli-aarch64-apple-darwin.tar.gz"
-      sha256 "40aee60416a700938fc9c620bbec2c808f5043a1fb7298ce4aa31499eba5b600"
+      url "https://github.com/WeftOS/weftos/releases/download/v0.8.4/clawft-cli-aarch64-apple-darwin.tar.gz"
+      sha256 "b7e33589d6be8629ff9ce28385fd69cf791d5c0d1c3abdf3c0ea7b0cbff8f80c"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.3/clawft-cli-x86_64-apple-darwin.tar.gz"
-      sha256 "24f37f3ce601f2e3790e7f56c271aaff45129915b71fa6386bcd2cee1e71df46"
+      url "https://github.com/WeftOS/weftos/releases/download/v0.8.4/clawft-cli-x86_64-apple-darwin.tar.gz"
+      sha256 "4b948986642bf020c2241bca394c485f885570c195b50d795bffbc307e596d9a"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.3/clawft-cli-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "0af134ebf8146c01da8ede5d352c867537cd19419ef159c19815e7c5cfe9c02c"
+      url "https://github.com/WeftOS/weftos/releases/download/v0.8.4/clawft-cli-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "1224c6f1e99cd15890b0a0b84c77b2278aa74fac56fc13eda0068e0802c17448"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.3/clawft-cli-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "3a4dd4597ffc1aef28bed516c0982ed5148c8db9dcafdb18403fcdbff57f2e6b"
+      url "https://github.com/WeftOS/weftos/releases/download/v0.8.4/clawft-cli-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "7985de4343fac6098e68c50b80b4526cba5b9a9782edb24ac963c8e9adb07dbc"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin":               {},
-    "aarch64-unknown-linux-gnu":          {},
+    "aarch64-apple-darwin": {},
+    "aarch64-unknown-linux-gnu": {},
     "aarch64-unknown-linux-musl-dynamic": {},
-    "aarch64-unknown-linux-musl-static":  {},
-    "x86_64-apple-darwin":                {},
-    "x86_64-pc-windows-gnu":              {},
-    "x86_64-unknown-linux-gnu":           {},
-    "x86_64-unknown-linux-musl-dynamic":  {},
-    "x86_64-unknown-linux-musl-static":   {},
-  }.freeze
+    "aarch64-unknown-linux-musl-static": {},
+    "x86_64-apple-darwin": {},
+    "x86_64-pc-windows-gnu": {},
+    "x86_64-unknown-linux-gnu": {},
+    "x86_64-unknown-linux-musl-dynamic": {},
+    "x86_64-unknown-linux-musl-static": {}
+  }
 
   def target_triple
     cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"

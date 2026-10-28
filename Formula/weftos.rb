@@ -1,40 +1,40 @@
 class Weftos < Formula
   desc "WeftOS: A portable AI kernel with process management, mesh networking, and cognitive substrate"
-  homepage "https://github.com/weave-logic-ai/weftos"
-  version "0.8.3"
+  homepage "https://github.com/WeftOS/weftos"
+  version "0.8.4"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.3/weftos-aarch64-apple-darwin.tar.gz"
-      sha256 "53c9fb34d57b16dc22d7b18921a2d226bb4d3ed5e763a0f3dd36e967aa43fb39"
+      url "https://github.com/WeftOS/weftos/releases/download/v0.8.4/weftos-aarch64-apple-darwin.tar.gz"
+      sha256 "b5a735ef0e445cfca55ae9dd9376e008f3fe92e87b11b9c2a863463458a0433e"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.3/weftos-x86_64-apple-darwin.tar.gz"
-      sha256 "1421b21b5ef9cbe1f9273609690a82eae383d0e3ad21412a4a5c7714071836a3"
+      url "https://github.com/WeftOS/weftos/releases/download/v0.8.4/weftos-x86_64-apple-darwin.tar.gz"
+      sha256 "4771d916f7970ab65bc0061c3c683b78725f2ec35534404b75a8540d515b3ba9"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.3/weftos-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "50ada9f1c6fc92e98b98f6a46fcb16f8c3eaacc664aaf2bcb0cf07a8789b15f8"
+      url "https://github.com/WeftOS/weftos/releases/download/v0.8.4/weftos-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "3a27519029091acad386eabe0a03a6bc76d2ef3c79cdfc514f67f82463d6011a"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.3/weftos-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "b2c13c679a4e9aa4b1d5bb1f3aef8826d62d499ad597cb0c7976382bb8a27565"
+      url "https://github.com/WeftOS/weftos/releases/download/v0.8.4/weftos-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "15f7c10aee6226b64de84e2337e4d2011fc043556ab0da95cad96a8390cbf06f"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin":               {},
-    "aarch64-unknown-linux-gnu":          {},
+    "aarch64-apple-darwin": {},
+    "aarch64-unknown-linux-gnu": {},
     "aarch64-unknown-linux-musl-dynamic": {},
-    "aarch64-unknown-linux-musl-static":  {},
-    "x86_64-apple-darwin":                {},
-    "x86_64-pc-windows-gnu":              {},
-    "x86_64-unknown-linux-gnu":           {},
-    "x86_64-unknown-linux-musl-dynamic":  {},
-    "x86_64-unknown-linux-musl-static":   {},
-  }.freeze
+    "aarch64-unknown-linux-musl-static": {},
+    "x86_64-apple-darwin": {},
+    "x86_64-pc-windows-gnu": {},
+    "x86_64-unknown-linux-gnu": {},
+    "x86_64-unknown-linux-musl-dynamic": {},
+    "x86_64-unknown-linux-musl-static": {}
+  }
 
   def target_triple
     cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
