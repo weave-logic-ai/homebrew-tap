@@ -1,40 +1,40 @@
 class ClawftGuiEgui < Formula
   desc "egui/eframe native GUI spike for ClawFT — ports the 12 core UI blocks"
-  homepage "https://github.com/weave-logic-ai/weftos"
-  version "0.8.3"
+  homepage "https://github.com/WeftOS/weftos"
+  version "0.8.4"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.3/clawft-gui-egui-aarch64-apple-darwin.tar.gz"
-      sha256 "1e07ac294171b07bd3e19697f5d973cfe7728b7aa49d38ea64f77403fdf6bd34"
+      url "https://github.com/WeftOS/weftos/releases/download/v0.8.4/clawft-gui-egui-aarch64-apple-darwin.tar.gz"
+      sha256 "e1f2fb982179d60cb26238a8629678429475c239739ec5acac8354f094cfb620"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.3/clawft-gui-egui-x86_64-apple-darwin.tar.gz"
-      sha256 "de5ec103ef434440b38f3f982ddf903eacb8ec97c455e94274b38b6bd649db6e"
+      url "https://github.com/WeftOS/weftos/releases/download/v0.8.4/clawft-gui-egui-x86_64-apple-darwin.tar.gz"
+      sha256 "d69318eb9736befc2601d88a1757d79489f9283cf8c1898af67d74dde1781ae1"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.3/clawft-gui-egui-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "2e64e9fe66d5d491d7e1b8f5c8e36e9646fc7373ee1101caec45f0fe87dcfdd0"
+      url "https://github.com/WeftOS/weftos/releases/download/v0.8.4/clawft-gui-egui-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "76e3677b7f9d351c123e50a1f0046da184b6318ba97705e15312950a5e41ad27"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/weave-logic-ai/weftos/releases/download/v0.8.3/clawft-gui-egui-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "f31dca97c7a535d051adf892e61cc799323decd5fee0814aa7739e84b8b568ad"
+      url "https://github.com/WeftOS/weftos/releases/download/v0.8.4/clawft-gui-egui-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "8a68730788f562270ed7ab196d2de987aef51e60dcb1754ea747e9fb249e1979"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin":               {},
-    "aarch64-unknown-linux-gnu":          {},
+    "aarch64-apple-darwin": {},
+    "aarch64-unknown-linux-gnu": {},
     "aarch64-unknown-linux-musl-dynamic": {},
-    "aarch64-unknown-linux-musl-static":  {},
-    "x86_64-apple-darwin":                {},
-    "x86_64-pc-windows-gnu":              {},
-    "x86_64-unknown-linux-gnu":           {},
-    "x86_64-unknown-linux-musl-dynamic":  {},
-    "x86_64-unknown-linux-musl-static":   {},
-  }.freeze
+    "aarch64-unknown-linux-musl-static": {},
+    "x86_64-apple-darwin": {},
+    "x86_64-pc-windows-gnu": {},
+    "x86_64-unknown-linux-gnu": {},
+    "x86_64-unknown-linux-musl-dynamic": {},
+    "x86_64-unknown-linux-musl-static": {}
+  }
 
   def target_triple
     cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
